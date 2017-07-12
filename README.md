@@ -11,7 +11,20 @@ cd myProject
 
 npm install
 
-gulp
+gulp -p
+```
+
+# 更多命令
+```bash
+gulp help
+```
+
+# 使用Flexible作为适配方案
+在初始化模版的时候可以选择是否是用[flexible](https://github.com/amfe/article/issues/17)，这是一套淘宝网h5正在使用的方案，如果选择yes之后将会默认安装[px2rem-postcss](https://github.com/songsiqi/px2rem-postcss)插件，该插件会将所有`css`中的`px`除以`75`转化为`rem`，如果不希望转换需要在css后添加注解`/* no */`:
+```css
+.t1 {
+    width: 300px;  /* no */
+}
 ```
 
 # 为什么使用gulp
