@@ -5,9 +5,9 @@
 ```bash
 npm install vue-cli -g
 
-vue init yangblink/vue-webpack-multi myProject
+vue init yangblink/vue-webpack-multi myproject
 
-cd myProject
+cd myproject
 
 npm install
 
