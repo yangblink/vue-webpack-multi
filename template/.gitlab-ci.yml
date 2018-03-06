@@ -1,0 +1,33 @@
+build_deploy_test_env:
+  stage: deploy
+  tags:
+    - curl
+  only:
+    - develop
+  script:
+    - node -v
+    - curl http://192.168.180.192/jenkins/git/notifyCommit?url=REPLACE_WITH_YOUR_GIT_REPOSITORY&branches=develop
+    - npm -v
+build_svn_product_env:
+  stage: deploy
+  tags:
+    - curl
+  only:
+    - master
+  script:
+    - node -v
+    - curl http://192.168.180.192/jenkins/git/notifyCommit?url=REPLACE_WITH_YOUR_GIT_REPOSITORY&branches=master
+    - npm -v
+{{#gitlabCiDoc}}
+pages:
+  stage: deploy
+  script:
+  - cp README.md ./docs
+  - rm -rf .public
+  - mkdir .public
+  - cp docs/* .public
+  - mv .public public
+  artifacts:
+    paths:
+      - public
+{{/gitlabCiDoc}}

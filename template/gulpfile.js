@@ -66,7 +66,7 @@ gulp.task('serve', () => {
 			port: process.env.PORT || config.dev.port,
 			open: autoOpenBrowser,
 			// logLevel: 'debug',
-			startPath: '/test.html',
+			startPath: '/login.html',
 			server: {baseDir: ['./dist', './static']},
 			middleware: browserSyncMiddleware,
 		})
@@ -116,7 +116,7 @@ gulp.task('page', () => {
 
 /**
  * 新建组件
- * @tesk {component}
+ * @task {component}
  */
  gulp.task('component', () => {
  	var page_argv = require('yargs')
@@ -125,7 +125,7 @@ gulp.task('page', () => {
  		.demandOption(['n'])
  		.argv;
 
- 	var name = argv.n, src = gulpConf.tpl.common, task;
+ 	var name = argv.n, src = gulpConf.tpl.component, task;
 
  	var distPath = path.resolve('./src/components', name);
  	// 目录必须存在 防止覆盖

@@ -6,9 +6,10 @@ var vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
+const entrys = utils.getEntries()
 
 module.exports = {
-  entry: utils.getEntries('./src/pages/**/*.js'),
+  entry: entrys,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

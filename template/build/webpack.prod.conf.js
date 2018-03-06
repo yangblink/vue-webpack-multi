@@ -122,9 +122,10 @@ if (config.build.bundleAnalyzerReport) {
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
 
-var pages = utils.getEntries('./src/pages/**/*.html')
+var pages = utils.getHtmlEntries('./src/pages/**/*.html');
 for(var page in pages) {
-  // if(page == 'login') continue;
+  // 排除不需要构建的页面
+  if(~config.build.excludePages.indexOf(page)) continue;
   // 配置生成的html文件，定义路径等
   var conf = {
     filename: page + '.html',
