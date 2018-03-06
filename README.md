@@ -5,7 +5,6 @@
 ```bash
 npm install vue-cli -g
 
-# 请务必将 -c 或 --clone 参数放在最后  否则会有问题 参考 https://github.com/vuejs/vue-cli/issues/525
 vue init yangblink/vue-webpack-multi myproject
 
 cd myproject
